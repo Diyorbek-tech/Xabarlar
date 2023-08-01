@@ -1,4 +1,4 @@
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base',
     'ckeditor',
-    'news'
+    'news',
+
 ]
 
 MIDDLEWARE = [
@@ -103,6 +104,14 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
+
+if DEBUG:
+    STATICFILES_DIRS = str(BASE_DIR / 'static'),
+
+else:
+    STATIC_ROOT = str(BASE_DIR / 'static')
+MEDIA_ROOT = str(BASE_DIR / 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
