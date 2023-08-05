@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import  Homeview, Singlenew,Technologyview,\
-    Aboutview,Contactview,Blogview
+    Aboutview,Contactview,Blogview,Testformview
 from django.views.static import serve
 from django.urls import re_path
 from django.conf import settings
@@ -17,4 +17,5 @@ urlpatterns = [
     path('about/',Aboutview.as_view(),name='about'),
     path('contact/',Contactview.as_view(),name='contact'),
     path('blog/',Blogview.as_view(),name='blog'),
+    path('admint/',Testformview.as_view(),name='test'),
 ]
